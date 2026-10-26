@@ -280,3 +280,19 @@ html{color-scheme:light}html[data-theme="dark"]{color-scheme:dark}
 .edu-years{font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:600}
 .edu h3{font:600 1.35rem/1.25 var(--serif);margin:8px 0 4px}
 .edu-field{color:var(--accent2);font-weight:500;margin-bottom:8px}
+
+/* ===== consistent section rhythm ===== */
+main>section.wrap:not(.numbers){padding-top:clamp(56px,8vw,88px);padding-bottom:0}
+main>section.contact{padding-top:clamp(64px,9vw,96px);padding-bottom:clamp(40px,6vw,64px);margin-top:clamp(56px,8vw,88px)}
+.sec-title{margin:0 0 14px}
+.sec-sub{margin:0 0 34px}
+.sec-title + .story-grid,.sec-title + .tool-grid,.sec-title + .edu-grid,.sec-title + .filters{margin-top:34px}
+.sec-title + .tool-grid,.sec-title + .edu-grid{margin-top:34px}
+.sec-sub + .tool-grid,.sec-sub + .edu-grid,.sec-sub + .feature{margin-top:0}
+.sec-sub + .feature{margin-top:0}
+.tool-grid,.edu-grid{margin-top:22px}
+.sub-h,.sub-h.sm{font-size:1.45rem;margin:52px 0 0}
+.feature{margin:0 0 0}
+.voices .sec-title:not(:first-child){margin-top:clamp(56px,8vw,88px)}
+.numbers{margin-top:-30px}
+@media(max-width:860px){.numbers{margin-top:8px}}
