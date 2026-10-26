@@ -215,3 +215,58 @@ section{padding:90px 0}
 .portrait-frame::before{content:"";position:absolute;inset:14px -14px -14px 14px;border:2px solid var(--accent);border-radius:22px;opacity:.55;z-index:-1}
 .portrait figcaption{margin-top:36px}
 @media(max-width:860px){.portrait-frame::before{display:none}}
+
+/* story: strengths as chips under the intro */
+.story-grid{grid-template-columns:1fr;gap:26px;max-width:860px}
+.strengths{display:flex;flex-wrap:wrap;gap:10px}
+.strengths li{padding:8px 16px;border:1px solid rgba(245,185,113,.35);border-left:1px solid rgba(245,185,113,.35);border-radius:999px;background:rgba(245,185,113,.07);font-size:.88rem;color:var(--text);transition:.2s}
+.strengths li:hover{background:rgba(245,185,113,.16);border-color:var(--accent);transform:translateY(-2px)}
+
+/* ===== LIGHT THEME (default). Dark applies when <html data-theme="dark"> ===== */
+html:not([data-theme="dark"]){
+  --bg:#faf7f2; --bg2:#f1ece3; --card:#ffffff; --line:rgba(27,36,56,.12);
+  --text:#1b2438; --muted:#5d6a85; --accent:#c4621c; --accent2:#1f6fb0;
+}
+html:not([data-theme="dark"]) body{background:var(--bg);color:var(--text)}
+html:not([data-theme="dark"]) .nav.scrolled{background:rgba(250,247,242,.88)}
+html:not([data-theme="dark"]) .orb{opacity:.28}
+html:not([data-theme="dark"]) .o1{background:#f3b27a}
+html:not([data-theme="dark"]) .o2{background:#9ec7ee}
+html:not([data-theme="dark"]) .lede,html:not([data-theme="dark"]) .story p,html:not([data-theme="dark"]) .job-body ul,html:not([data-theme="dark"]) .plain,html:not([data-theme="dark"]) .vtext,html:not([data-theme="dark"]) .how,html:not([data-theme="dark"]) .fp-points,html:not([data-theme="dark"]) .step p,html:not([data-theme="dark"]) .mentor p:not(.mini),html:not([data-theme="dark"]) .feature p,html:not([data-theme="dark"]) .sec-sub.light{color:#3d4a66}
+html:not([data-theme="dark"]) .lede strong,html:not([data-theme="dark"]) .story p strong,html:not([data-theme="dark"]) .job-body li strong{color:var(--text)}
+html:not([data-theme="dark"]) .btn.primary{background:#e98a2e;color:#fff}
+html:not([data-theme="dark"]) .btn.primary:hover{box-shadow:0 8px 24px rgba(233,138,46,.4)}
+html:not([data-theme="dark"]) .btn.ghost{background:#fff;color:var(--text)}
+html:not([data-theme="dark"]) .btn.ghost:hover{color:var(--accent)}
+html:not([data-theme="dark"]) .tags span{background:rgba(31,111,176,.08);border-color:rgba(31,111,176,.22);color:var(--accent2)}
+html:not([data-theme="dark"]) .stat,html:not([data-theme="dark"]) .card,html:not([data-theme="dark"]) .job-head,html:not([data-theme="dark"]) .job-body,html:not([data-theme="dark"]) .step{box-shadow:0 2px 10px rgba(27,36,56,.05)}
+html:not([data-theme="dark"]) .job.open .job-body{box-shadow:0 8px 24px rgba(27,36,56,.07)}
+html:not([data-theme="dark"]) .job.open .job-head{box-shadow:none}
+html:not([data-theme="dark"]) .dot{background:var(--bg)}
+html:not([data-theme="dark"]) .job.open .dot{background:var(--accent);box-shadow:0 0 0 6px rgba(196,98,28,.16)}
+html:not([data-theme="dark"]) .chip{background:#fff}
+html:not([data-theme="dark"]) .chip.active{background:#e98a2e;border-color:#e98a2e;color:#fff}
+html:not([data-theme="dark"]) .kpis div{background:rgba(196,98,28,.07);border-color:rgba(196,98,28,.22)}
+html:not([data-theme="dark"]) .strengths li{background:#fff;border-color:rgba(196,98,28,.35);color:var(--text)}
+html:not([data-theme="dark"]) .strengths li:hover{background:rgba(196,98,28,.1)}
+html:not([data-theme="dark"]) .agents{background:linear-gradient(180deg,var(--bg2),#f7f2ea)}
+html:not([data-theme="dark"]) .mentor{background:rgba(196,98,28,.05);border-color:rgba(196,98,28,.4)}
+html:not([data-theme="dark"]) .feature{background:linear-gradient(150deg,rgba(233,138,46,.1),rgba(31,111,176,.05));border-color:rgba(196,98,28,.3)}
+html:not([data-theme="dark"]) .shot{box-shadow:0 14px 40px rgba(27,36,56,.2)}
+html:not([data-theme="dark"]) .portrait-frame{box-shadow:0 30px 60px rgba(27,36,56,.25);border-color:rgba(196,98,28,.5)}
+html:not([data-theme="dark"]) .portrait-frame::before{border-color:#e98a2e}
+html:not([data-theme="dark"]) .contact{background:radial-gradient(ellipse at center,#f6e7d3,var(--bg) 72%)}
+html:not([data-theme="dark"]) .stat b,html:not([data-theme="dark"]) .kpis b{color:var(--accent)}
+html:not([data-theme="dark"]) .badge,html:not([data-theme="dark"]) .eyebrow,html:not([data-theme="dark"]) .mini,html:not([data-theme="dark"]) .when{color:var(--accent)}
+html:not([data-theme="dark"]) .sub-h{color:var(--accent2)}
+
+/* theme toggle */
+.nav-right{display:flex;align-items:center;gap:22px}
+.theme-toggle{all:unset;box-sizing:border-box;cursor:pointer;width:38px;height:38px;border-radius:50%;display:grid;place-items:center;border:1px solid var(--line);color:var(--text);background:transparent;transition:.25s}
+.theme-toggle:hover,.theme-toggle:focus-visible{border-color:var(--accent);color:var(--accent)}
+.theme-toggle svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.theme-toggle .moon{display:block}.theme-toggle .sun{display:none}
+html[data-theme="dark"] .theme-toggle .moon{display:none}
+html[data-theme="dark"] .theme-toggle .sun{display:block}
+body,.nav,.card,.stat,.job-head,.job-body,.step,.btn,.chip{transition:background-color .3s,color .3s,border-color .3s}
+html{color-scheme:light}html[data-theme="dark"]{color-scheme:dark}
