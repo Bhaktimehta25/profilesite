@@ -162,3 +162,56 @@ section{padding:90px 0}
 .chrome span{margin-left:10px;font-size:.72rem;color:#6b6760;background:#fff;padding:2px 12px;border-radius:6px}
 .shot img{display:block;width:100%;height:auto}
 .shot figcaption{padding:8px 12px;font-size:.78rem;color:#6b6760;background:#f3f1ee}
+
+/* hero layout (desktop alignment) */
+.hero{min-height:100vh;padding:110px 0 70px}
+.hero-grid{grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:clamp(32px,5vw,80px);align-items:center}
+.hero h1{font-size:clamp(3rem,6.6vw,5.6rem);line-height:1.02;margin:14px 0 10px;white-space:nowrap}
+.hero .role{margin-bottom:0}
+.hero .lede{max-width:600px}
+.portrait{margin:0;justify-self:center;width:min(100%,430px);position:relative}
+.portrait-frame{position:relative;border-radius:28px;overflow:hidden;aspect-ratio:4/5;border:1px solid rgba(245,185,113,.45);box-shadow:0 30px 70px rgba(0,0,0,.5)}
+.portrait-frame img{width:100%;height:100%;object-fit:cover;display:block}
+.portrait::before{content:"";position:absolute;inset:18px -18px -18px 18px;border:2px solid var(--accent);border-radius:28px;opacity:.55;z-index:-1}
+.portrait figcaption{margin-top:30px;text-align:center;font-size:.86rem;color:var(--muted)}
+.portrait figcaption b{color:var(--accent);font-weight:600}
+@media(max-width:860px){
+  .hero{min-height:0;padding-top:100px}
+  .hero-grid{grid-template-columns:1fr}
+  .portrait{order:-1;width:min(70%,300px);justify-self:start}
+  .hero h1{white-space:normal}
+}
+
+/* hero v3: smaller portrait, mobile side-by-side */
+.hero-text{display:contents}
+.hero-head{grid-area:head;align-self:end}
+.hero-body{grid-area:body;align-self:start}
+.portrait{grid-area:portrait}
+.hero-grid{grid-template-areas:"head portrait" "body portrait";grid-template-rows:auto auto;row-gap:0}
+.hero .lede{margin-top:22px}
+.portrait{width:min(100%,300px)}
+.portrait::before{inset:14px -14px -14px 14px}
+.portrait-frame{border-radius:22px}
+@media(max-width:860px){
+  .hero{padding:96px 0 40px}
+  .hero-grid{grid-template-columns:112px minmax(0,1fr);grid-template-areas:"portrait head" "body body";column-gap:18px;row-gap:6px;align-items:center}
+  .hero-head{align-self:center}
+  .portrait{order:0;width:112px;justify-self:start;align-self:center}
+  .portrait::before{display:none}
+  .portrait-frame{border-radius:18px;aspect-ratio:1;box-shadow:0 10px 24px rgba(0,0,0,.45)}
+  .portrait figcaption{display:none}
+  .hero h1{font-size:clamp(2.1rem,9vw,3rem);white-space:normal;margin:6px 0 4px}
+  .hero .role{font-size:1rem}
+  .hero .eyebrow{font-size:.68rem}
+  .hero .lede{font-size:1rem;margin:14px 0 22px}
+}
+@media(max-width:860px){.portrait-frame img{object-position:50% 35%}}
+@media(max-width:860px){.numbers{margin-top:8px}}
+
+/* outline belongs to the photo only, not the caption */
+.portrait::before{display:none}
+.portrait-frame{overflow:visible}
+.portrait-frame img{border-radius:inherit}
+.portrait-frame::before{content:"";position:absolute;inset:14px -14px -14px 14px;border:2px solid var(--accent);border-radius:22px;opacity:.55;z-index:-1}
+.portrait figcaption{margin-top:36px}
+@media(max-width:860px){.portrait-frame::before{display:none}}
