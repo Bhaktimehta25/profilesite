@@ -270,3 +270,13 @@ html[data-theme="dark"] .theme-toggle .moon{display:none}
 html[data-theme="dark"] .theme-toggle .sun{display:block}
 body,.nav,.card,.stat,.job-head,.job-body,.step,.btn,.chip{transition:background-color .3s,color .3s,border-color .3s}
 html{color-scheme:light}html[data-theme="dark"]{color-scheme:dark}
+.voices .sec-title:not(:first-child){margin-top:70px}
+
+/* education */
+.edu-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px;margin-top:26px}
+.edu{padding:28px;position:relative;overflow:hidden;transition:.3s}
+.edu:hover{transform:translateY(-4px);border-color:var(--accent)}
+.edu::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:linear-gradient(var(--accent),var(--accent2))}
+.edu-years{font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:600}
+.edu h3{font:600 1.35rem/1.25 var(--serif);margin:8px 0 4px}
+.edu-field{color:var(--accent2);font-weight:500;margin-bottom:8px}
