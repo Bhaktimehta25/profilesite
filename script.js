@@ -44,7 +44,7 @@ const countUp = el => {
 };
 
 // Reveal on scroll
-document.querySelectorAll('.stat, .story-grid, .job, .step, .mentor, .card, .contact .wrap')
+document.querySelectorAll('.stat, .story-grid, .job, .step, .mentor, .quote, .card, .contact .wrap')
   .forEach(el => el.classList.add('reveal'));
 const io = new IntersectionObserver(entries => {
   entries.forEach(e => {
