@@ -320,3 +320,8 @@ main>section.contact{padding-top:clamp(64px,9vw,96px);padding-bottom:clamp(40px,
 .agent-icon svg{width:28px;height:28px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
 .proj:hover .agent-icon{transform:rotate(-6deg) scale(1.06)}
 .agent-head .badge{white-space:nowrap}
+
+/* cross-role leadership skills */
+.tags-lead{margin-top:10px!important}
+.job-body .tags-lead span{background:rgba(196,98,28,.1);border-color:rgba(196,98,28,.3);color:var(--accent)}
+html[data-theme="dark"] .job-body .tags-lead span{background:rgba(245,185,113,.1);border-color:rgba(245,185,113,.3)}
